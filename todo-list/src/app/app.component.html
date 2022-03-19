@@ -1,0 +1,18 @@
+<div>
+  <app-item
+  *ngFor="let task of tasks"  
+  [text]="task"
+  (onDeleteTask)="onDelete($event)">
+</app-item>
+</div>
+<!-- 
+<div>{{applesNumber}}</div> <br/>
+<button (click)="addApple()">Add apple</button> <br/> -->
+
+<form #myForm="ngForm">  
+  <input ngModel name="task" type="text" placeholder="input name">
+   <br/>
+  <!-- <input type="number"> -->
+
+  <button (click)="addTask(myForm)">click</button>
+</form>
