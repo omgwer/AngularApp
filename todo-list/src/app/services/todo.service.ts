@@ -9,7 +9,7 @@ export class TodoService {
     this.http = http;
   }
 
-  GetAll() : Observable<TaskDto[]>{
-    return this.
-  }
+  // GetAll() : Observable<TaskDto[]>{
+  //   return this.
+  // }
 }

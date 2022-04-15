@@ -1,18 +1,26 @@
-<div>
+<div class="task-container">
   <app-item
-  *ngFor="let task of tasks"  
-  [text]="task"
-  (onDeleteTask)="onDelete($event)">
+  *ngFor="let task of tasks"
+  [book]="task"
+  (onDeleteTask)="onDelete(task.id)"
+  (onCloseTask)="onClose(task.id)"
+  >
 </app-item>
 </div>
-<!-- 
-<div>{{applesNumber}}</div> <br/>
-<button (click)="addApple()">Add apple</button> <br/> -->
 
-<form #myForm="ngForm">  
-  <input ngModel name="task" type="text" placeholder="input name">
-   <br/>
-  <!-- <input type="number"> -->
+<form>
+  <input type="text" placeholder="input name" #taskName>
 
-  <button (click)="addTask(myForm)">click</button>
+  <button class="form-button" (click)="addTask(taskName)">click</button>
 </form>
+
+<app-item
+  [isShowOnlyName] = "true"
+  *ngFor="let task of tasks"
+  [book]="task"
+>
+</app-item>
+
+<!--<pre> {{-->
+<!--  tasks| json-->
+<!--  }} </pre>-->

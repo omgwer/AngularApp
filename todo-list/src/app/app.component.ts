@@ -1,31 +1,37 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import {Book} from "./item/item.component";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  name:string = "Alexandr";
-  showName: boolean = true;
-  animals:Array<string> = ["Cat", "Dog", "Turtle"];
-  applesNumber:number = 10;
-  tasks: Array<string> = [
-    "GoToShop",
-    "GoToCinema",
-    "GoToSchool"
+
+  tasks: Array<Book> = [
+    {id:  1, name : "GoToShop"},
+    {id : 2, name : "GoToCinema"},
+    {id : 3, name : "GoToSchool"}
   ];
 
-  addTask(myForm : NgForm) {
-    this.tasks.push(myForm.value.task);
-  }
-  
-  addApple():void {
-      this.applesNumber++;
+  addTask(myForm: HTMLInputElement) {
+    let id = this.tasks.length + 1;
+    this.tasks.forEach(task => {
+      id = task.id === id ? ++id: id;
+    })
+    const newTask : Book = {id, name : myForm.value.trim()};
+
+    this.tasks.push(newTask);
   }
 
-  onDelete(text: string): void {
-    this.tasks = this.tasks.filter(task => task != text);
+  onDelete(taskId : number): void
+  {
+    this.tasks = this.tasks.filter(task => task.id != taskId);
+  }
+
+  onClose(taskId : number) : void
+  {
+
   }
 }

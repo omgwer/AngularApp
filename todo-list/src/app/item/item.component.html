@@ -1,4 +1,16 @@
-<p>{{text}}</p>
-<button style="display:inline-block" 
-        (click)="delete()">
-         DeleteThisTask</button>
+
+<p class="task-name">
+  {{book.name}}
+</p>
+
+<ng-container *ngIf="!isShowOnlyName">
+  <button (click)="close()">
+    CloseThisTask
+  </button>
+
+  <button (click)="delete()">
+    DeleteThisTask
+  </button>
+</ng-container>
+
+
