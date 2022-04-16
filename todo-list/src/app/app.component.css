@@ -1,6 +1,31 @@
+*
+{
+  box-sizing: border-box;
+}
+
+.todo-list-container
+{
+  background-color: antiquewhite;
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0 20px;
+}
+
+.container
+{
+  display: flex;
+  justify-content: space-around;
+}
+
 .task-container
 {
   max-width: 270px;
+}
+
+.todo-list-header
+{
+  text-align: center;
 }
 
 

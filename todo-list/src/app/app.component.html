@@ -1,25 +1,36 @@
-<div class="task-container">
-  <app-item
-  *ngFor="let task of tasks"
-  [book]="task"
-  (onDeleteTask)="onDelete(task.id)"
-  (onCloseTask)="onClose(task.id)"
-  >
-</app-item>
+<div class="todo-list-container">
+  <h1 class="todo-list-header">
+    Todo List
+  </h1>
+  <div class="container">
+    <div class="task-container">
+      <h2>Task list: </h2>
+      <app-item
+        *ngFor="let task of tasks"
+        [book]="task"
+        (onDeleteTask)="onDelete(task.id)"
+        (onCloseTask)="onClose(task.id)"
+      >
+      </app-item>
+      <form>
+        <input type="text" placeholder="input name" #taskName>
+        <button class="form-button" (click)="addTask(taskName)">click</button>
+      </form>
+    </div>
+    <div class="closed-task-container">
+      <h2>Closed task list:</h2>
+      <app-item
+        [isShowOnlyName]="true"
+        *ngFor="let task of tasks"
+        [book]="task"
+      >
+      </app-item>
+    </div>
+  </div>
+
+
 </div>
 
-<form>
-  <input type="text" placeholder="input name" #taskName>
-
-  <button class="form-button" (click)="addTask(taskName)">click</button>
-</form>
-
-<app-item
-  [isShowOnlyName] = "true"
-  *ngFor="let task of tasks"
-  [book]="task"
->
-</app-item>
 
 <!--<pre> {{-->
 <!--  tasks| json-->

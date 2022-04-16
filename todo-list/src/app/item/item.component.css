@@ -1,11 +1,16 @@
 :host
 {
- display: flex;
+ display: block;
  align-items: center;
   justify-content: space-between;
 }
 
 .task-name
 {
-  //display: inline-block;
+  display: block;
+}
+
+.todo-list-header
+{
+  margin: 0 10px;
 }
