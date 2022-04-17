@@ -1,8 +1,3 @@
-*
-{
-  box-sizing: border-box;
-}
-
 .todo-list-container
 {
   background-color: antiquewhite;
@@ -20,12 +15,30 @@
 
 .task-container
 {
-  max-width: 270px;
+  max-width: 400px;
 }
 
 .todo-list-header
 {
   text-align: center;
 }
+
+.form-button
+{
+  background-color: rgb(125, 221, 46);
+  border-radius: 10px;
+  border: 1px solid rgb(125, 221, 46);
+  color: whitesmoke;
+  padding: 2px 8px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.task-form
+{
+  display: flex;
+  justify-content: space-between;
+}
+
 
 
