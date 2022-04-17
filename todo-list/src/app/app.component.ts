@@ -15,6 +15,8 @@ export class AppComponent {
     {id : 3, name : "GoToSchool"}
   ];
 
+  closedTask: Array<Book> = [];
+
   addTask(myForm: HTMLInputElement) {
     let id = this.tasks.length + 1;
     this.tasks.forEach(task => {
